@@ -6,7 +6,7 @@
 /*   By: zhassna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 09:17:25 by zhassna           #+#    #+#             */
-/*   Updated: 2025/04/13 11:45:11 by zhassna          ###   ########.fr       */
+/*   Updated: 2025/04/13 12:05:22 by zhassna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int	main(int ac, char **av)
 		}
 		ft_img(&data);
 		ft_map(&data, av[1]);
-		mlx_hook(data.win, 17, 0, close_window, &data);
+		mlx_hook(data.win, DestroyNotify, ButtonPressMask, ft_finish, &data);
 		mlx_loop_hook(data.mlx, ft_enemy_sprite_animation, &data);
 		mlx_hook(data.win, KeyPress, KeyPressMask, ft_handler, &data);
 		mlx_loop(data.mlx);
@@ -127,6 +127,5 @@ int	main(int ac, char **av)
 		write(2, "incorrect input!\n", 17);
 		return (1);
 	}
-	ft_finish(&data);
-	return (0);
+	return (ft_finish(&data), 0);
 }

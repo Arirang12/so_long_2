@@ -6,7 +6,7 @@
 /*   By: zhassna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 09:25:12 by zhassna           #+#    #+#             */
-/*   Updated: 2025/04/13 11:21:47 by zhassna          ###   ########.fr       */
+/*   Updated: 2025/04/13 12:02:11 by zhassna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_algo(t_data *data, int x, int y)
 {
 	static int	c;
 	static int	e;
+
 	if (x < 0 || y < 0 || x > data->columns || y > data->lines
 		|| data->map2[y][x] == '1' || data->map2[y][x] == 'X')
 		return (0);
